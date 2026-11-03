@@ -70,9 +70,9 @@ header p { color: var(--muted); max-width: 560px; margin: 6px 0 28px; }
   margin-top: 36px; padding: 20px; background: var(--panel);
   border: 1px solid var(--line); border-radius: 16px;
 }
-.score { display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; border: 6px solid var(--line); }
+.score { display: grid; place-content: center; justify-items: center; width: 108px; height: 108px; border-radius: 50%; border: 6px solid var(--line); flex-shrink: 0; }
 .score strong { font-size: 30px; line-height: 1; }
-.score span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.score span { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 .score.current { border-color: var(--ok); }
 .score.unverifiable { border-color: var(--warn); }
 .score.outdated { border-color: var(--bad); }
@@ -91,7 +91,7 @@ header p { color: var(--muted); max-width: 560px; margin: 6px 0 28px; }
   background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
   padding: 24px; font-size: 18px; line-height: 1.9; white-space: pre-wrap;
 }
-.mark { border: 0; padding: 1px 3px; border-radius: 4px; text-align: left; line-height: inherit; font-size: inherit; }
+.mark { color: inherit; padding: 1px 3px; border-radius: 4px; cursor: pointer; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .mark sup { font-size: 10px; font-weight: 700; margin-left: 2px; }
 .mark.current { background: var(--ok-bg); box-shadow: inset 0 -2px var(--ok); }
 .mark.unverifiable { background: var(--warn-bg); box-shadow: inset 0 -2px var(--warn); }

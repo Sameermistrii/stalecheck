@@ -53,15 +53,19 @@ export default function Home() {
       const c = byId.get(s.id)!;
       out.push(checked.slice(pos, s.start));
       out.push(
-        <button
+        // <mark>, not <button>: buttons can't wrap across lines inside a paragraph.
+        <mark
           key={s.id}
+          role="button"
+          tabIndex={0}
           className={`mark ${c.status} ${active === s.id ? "on" : ""}`}
           onClick={() => setActive(s.id)}
+          onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), setActive(s.id))}
           aria-label={`${LABEL[c.status]} claim, freshness ${c.freshness}`}
         >
           {checked.slice(s.start, s.end)}
           <sup>{c.freshness}</sup>
-        </button>,
+        </mark>,
       );
       pos = s.end;
     }

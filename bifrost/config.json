@@ -1,0 +1,64 @@
+{
+  "$schema": "https://www.getbifrost.ai/schema",
+  "setup_token": "stalecheck-local-setup",
+  "client": {
+    "enable_logging": true,
+    "drop_excess_requests": false
+  },
+  "providers": {
+    "groq": {
+      "keys": [
+        {
+          "name": "groq-free",
+          "value": "env.GROQ_API_KEY",
+          "models": [
+            "*"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "network_config": {
+        "max_retries": 2,
+        "retry_backoff_initial": 500,
+        "retry_backoff_max": 3000
+      }
+    },
+    "gemini": {
+      "keys": [
+        {
+          "name": "gemini-free",
+          "value": "env.GEMINI_API_KEY",
+          "models": [
+            "*"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "network_config": {
+        "max_retries": 2,
+        "retry_backoff_initial": 500,
+        "retry_backoff_max": 3000
+      }
+    }
+  },
+  "governance": {
+    "virtual_keys": [
+      {
+        "id": "vk-stalecheck",
+        "name": "stalecheck-app",
+        "value": "sk-bf-stalecheck-local",
+        "description": "StaleCheck app key with a daily spend cap",
+        "is_active": true,
+        "allow_all_providers": true
+      }
+    ],
+    "budgets": [
+      {
+        "id": "budget-stalecheck-daily",
+        "virtual_key_id": "vk-stalecheck",
+        "max_limit": 1.0,
+        "reset_duration": "1d"
+      }
+    ]
+  }
+}

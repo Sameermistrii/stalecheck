@@ -1,0 +1,15 @@
+{
+  "_note": "Ground-truth labels as of mid-2026. Re-check before quoting results; facts change, which is the whole point.",
+  "cases": [
+    { "answer": "The latest stable release of Python is Python 3.11.", "expected": "outdated" },
+    { "answer": "React 18 is the newest major version of React.", "expected": "outdated" },
+    { "answer": "Node.js 18 is the current active LTS release of Node.", "expected": "outdated" },
+    { "answer": "OpenAI's most advanced publicly available model is GPT-4.", "expected": "outdated" },
+    { "answer": "Twitter is run by its CEO, Jack Dorsey.", "expected": "outdated" },
+    { "answer": "The EU AI Act is still being negotiated and has not been adopted.", "expected": "outdated" },
+    { "answer": "Python 2 is still officially supported by the Python Software Foundation.", "expected": "outdated" },
+    { "answer": "Satya Nadella is the CEO of Microsoft.", "expected": "current" },
+    { "answer": "Jensen Huang is the CEO of Nvidia.", "expected": "current" },
+    { "answer": "Under GDPR, fines can reach up to 4% of a company's annual global turnover.", "expected": "current" }
+  ]
+}

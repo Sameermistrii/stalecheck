@@ -1,0 +1,9 @@
+node_modules
+.next
+.env
+.env.local
+next-env.d.ts
+*.tsbuildinfo
+bifrost/*
+!bifrost/config.json
+eval/results.json

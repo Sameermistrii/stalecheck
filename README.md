@@ -8,6 +8,12 @@ Paste any ChatGPT, Claude or Gemini answer. StaleCheck finds every claim that ca
 
 LLMs answer from a frozen snapshot of the world, but they say things like "the latest version is…" with full confidence. Developers ship code against deprecated APIs, buyers quote old prices, and teams cite repealed rules. Nothing in the chat window tells you which sentences have quietly expired.
 
+## Demo
+
+[![Watch the StaleCheck demo](docs/demo-thumb.jpg)](docs/demo.mp4)
+
+*1:36 walkthrough: a real check of a ChatGPT-style answer, then how it works under the hood.*
+
 ## How it works
 
 ```mermaid
@@ -87,14 +93,6 @@ npm run eval    # with the app running: 10 labelled answers, reports accuracy, s
 | **10/10** | **7/7** | **0** | **~1,700** |
 
 It's a small, hand-picked set, so treat it as a smoke test rather than a benchmark. Results are written to `eval/results.json`. Labels in `eval/cases.json` reflect mid-2026, so re-check them before quoting numbers.
-
-## Demo script (2–3 min)
-
-1. **Hook (15s):** "AI answers expire. Here's a confident ChatGPT answer. Which sentences are still true?"
-2. **Run it (45s):** paste the sample and click Check. Red strikethroughs appear on "Python 3.11", "React 18", "GPT-4" and "Jack Dorsey", and green on still-true facts.
-3. **Drill in (30s):** click a red claim. Show "Now: …", the explanation citing [1] and [2], and the live source links.
-4. **Under the hood (45s):** open the Bifrost UI and show the logged requests. Revoke the Groq key, run it again, and the "Fallbacks" counter ticks up while the result still arrives. Mention the $1/day budget cap.
-5. **Numbers (15s):** show the `npm run eval` accuracy and tokens per check.
 
 ## Limitations and next steps
 

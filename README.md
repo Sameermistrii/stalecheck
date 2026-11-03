@@ -10,7 +10,13 @@ LLMs answer from a frozen snapshot of the world, but they say things like "the l
 
 ## Demo
 
-[![Watch the StaleCheck demo](docs/demo-thumb.jpg)](docs/demo.mp4)
+
+
+https://github.com/user-attachments/assets/d9922646-20a4-46b9-a38e-83c49e59f133
+
+
+
+
 
 *1:36 walkthrough: a real check of a ChatGPT-style answer, then how it works under the hood.*
 
